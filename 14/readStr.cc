@@ -54,7 +54,7 @@ class ReadLine {
 public:
 	ReadLine() = delete;
 	ReadLine(istream &i) : is(i) { }
-	bool operator()(string &s) const { return getline(is, s); }
+	istream &operator()(string &s) const { return getline(is, s); }
 private:
 	istream &is;
 };

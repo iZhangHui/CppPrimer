@@ -57,6 +57,7 @@ REFMEMS                  reference qualified member functions
 REGEX                    regular expressions library
 STRING_NUMERIC_CONVS     conversions to and from string to numeric
 */
+#define STRING_NUMERIC_CONVS
 #endif  // ends compiler version check
 
 #ifndef STRING_NUMERIC_CONVS
