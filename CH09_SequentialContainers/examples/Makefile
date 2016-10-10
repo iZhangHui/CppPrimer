@@ -5,7 +5,7 @@ OBJECTS = capacity.exe erase1.exe erase2.exe find_ops.exe \
 
 # tells make to use the file "../GNU_makefile_template", which
 # defines general rules for making .o and .exe files
-include ../GNU_makefile_template
+include ../../GNU_makefile_template
 
-LOCFLAGS = -I../CH07_Classes
+LOCFLAGS = -I../../
 
