@@ -1,6 +1,9 @@
-### CppPrimer
-C++ Primer 5th
+### C++ Primer 5th
 
+### Notes
+
+- Use `G++ 5.4+`, `Clang++ 3.8+` and [others](http://en.cppreference.com/w/cpp/compiler_support).
+- Use `-std=c++11`(recommend: `-pedantic -Wall`) flag for compiling.
 
 ### Contents
 
@@ -26,4 +29,4 @@ C++ Primer 5th
 - Part IV:  Advanced Topics
   - [Chapter 17. Specialized Library Facilities]()
   - [Chapter 18. Tools for Large Programs]()
-  - Chapter 19. Specialized Tools and Techniques
+  - [Chapter 19. Specialized Tools and Techniques]()
