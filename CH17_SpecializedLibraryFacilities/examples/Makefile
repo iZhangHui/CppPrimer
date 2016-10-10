@@ -11,14 +11,14 @@ OBJECTS = badgetc.exe bits.exe findbook.exe \
 
 # tells make to use the file "../GNU_makefile_template", which
 # defines general rules for making .o and .exe files
-include ../GNU_makefile_template
+include ../../GNU_makefile_template
 
-LOCFLAGS = -I../CH14_OverloadedOperationsAndConversions
+LOCFLAGS = -I../../ -I../../CH14_OverloadedOperationsAndConversions/examples
 
 phones.o ccpgms.o validatePhones.o \
 phonesFinal.o subexpr.o regex1.o \
-REerrs.o sci_dec.o manips11.o zips.o: ../Version_test.h
+REerrs.o sci_dec.o manips11.o zips.o: ../../Version_test.h
 
-findbook.exe: findbook.o ../CH14_OverloadedOperationsAndConversions/Sales_data.o
-	$(CC) $(CCFLAGS) -o findbook findbook.o ../CH14_OverloadedOperationsAndConversions/Sales_data.o
+findbook.exe: findbook.o ../../CH14_OverloadedOperationsAndConversions/examples/Sales_data.o
+	$(CC) $(CCFLAGS) -o findbook findbook.o ../../CH14_OverloadedOperationsAndConversions/examples/Sales_data.o
 

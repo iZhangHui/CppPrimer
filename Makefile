@@ -34,10 +34,10 @@ all:
 	cd CH13_CopyControl; make
 	cd CH14_OverloadedOperationsAndConversions; make
 	cd CH15_ObjectOrientedProgramming; make
-	# cd CH16_TemplatesAndGenericProgramming; make
-	# cd CH17_SpecializedLibraryFacilities; make
-	# cd CH18_ToolsForLargePrograms; make
-	# cd CH19_SpecializedToolsAndTechniques; make
+	cd CH16_TemplatesAndGenericProgramming; make
+	cd CH17_SpecializedLibraryFacilities; make
+	cd CH18_ToolsForLargePrograms; make
+	cd CH19_SpecializedToolsAndTechniques; make
 
 clean:
 	cd CH01_GettingStarted; make clean
@@ -55,10 +55,10 @@ clean:
 	cd CH13_CopyControl; make clean
 	cd CH14_OverloadedOperationsAndConversions; make clean
 	cd CH15_ObjectOrientedProgramming; make clean
-	# cd CH16_TemplatesAndGenericProgramming; make clean
-	# cd CH17_SpecializedLibraryFacilities; make clean
-	# cd CH18_ToolsForLargePrograms; make clean
-	# cd CH19_SpecializedToolsAndTechniques; make clean
+	cd CH16_TemplatesAndGenericProgramming; make clean
+	cd CH17_SpecializedLibraryFacilities; make clean
+	cd CH18_ToolsForLargePrograms; make clean
+	cd CH19_SpecializedToolsAndTechniques; make clean
 
 clobber:
 	cd CH01_GettingStarted; make clobber
@@ -76,7 +76,7 @@ clobber:
 	cd CH13_CopyControl; make clobber
 	cd CH14_OverloadedOperationsAndConversions; make clobber
 	cd CH15_ObjectOrientedProgramming; make clobber
-	# cd CH16_TemplatesAndGenericProgramming; make clobber
-	# cd CH17_SpecializedLibraryFacilities; make clobber
-	# cd CH18_ToolsForLargePrograms; make clobber
-	# cd CH19_SpecializedToolsAndTechniques; make clobber
+	cd CH16_TemplatesAndGenericProgramming; make clobber
+	cd CH17_SpecializedLibraryFacilities; make clobber
+	cd CH18_ToolsForLargePrograms; make clobber
+	cd CH19_SpecializedToolsAndTechniques; make clobber

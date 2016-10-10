@@ -10,9 +10,9 @@ OBJECTS = Array.exe array-parms4.exe \
 
 # tells make to use the file "../GNU_makefile_template", which
 # defines general rules for making .o and .exe files
-include ../GNU_makefile_template
+include ../../GNU_makefile_template
 
-LOCFLAGS = 
+LOCFLAGS =
 
 SP.o: DebugDelete.h
 
@@ -36,7 +36,7 @@ multiset.exe: multiset.o Sales_data.o
 	$(CC) $(CCFLAGS) $(LOCFLAGS) multiset.o Sales_data.o \
 			-o multiset.exe
 
-qm.exe: qm.o build.o 
+qm.exe: qm.o build.o
 	$(CC) $(CCFLAGS) $(LOCFLAGS) qm.o build.o -o qm.exe
 
 specialized.exe: debug.cc

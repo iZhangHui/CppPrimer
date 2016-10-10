@@ -6,12 +6,12 @@ OBJECTS = Animal.exe book.exe class.exe \
 
 # tells make to use the file "../GNU_makefile_template", which
 # defines general rules for making .o and .exe files
-include ../GNU_makefile_template
+include ../../GNU_makefile_template
 
-LOCFLAGS = -I../CH16_TemplatesAndGenericProgramming
+LOCFLAGS = -I../../CH16_TemplatesAndGenericProgramming/examples
 
 Animal.o: Animal.h
-book.o: ../CH16_TemplatesAndGenericProgramming/Sales_data.h bookexcept.h
+book.o: ../../CH16_TemplatesAndGenericProgramming/examples/Sales_data.h bookexcept.h
 virt-inherit.o: Animal_virtual_baseVers.h
 
 book.exe: book.o bookexcept.h Sales_data.o

@@ -4,9 +4,9 @@ OBJECTS = bitfields.exe calc.exe dyn_cast.exe enum.exe enum-match.exe \
 
 # tells make to use the file "../GNU_makefile_template", which
 # defines general rules for making .o and .exe files
-include ../GNU_makefile_template
+include ../../GNU_makefile_template
 
-LOCFLAGS = -I../CH14_OverloadedOperationsAndConversions
+LOCFLAGS = -I../../CH14_OverloadedOperationsAndConversions/examples
 
 Screen.o useScreen.o: Screen.h
 
