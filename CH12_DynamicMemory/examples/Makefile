@@ -6,10 +6,10 @@ OBJECTS = allocPtr.exe allocSP.exe \
 
 # tells make to use the file "../GNU_makefile_template", which
 # defines general rules for making .o and .exe files
-include ../GNU_makefile_template
+include ../../GNU_makefile_template
 
 # CH07_Classes has Sales_data files, CH06_Functions has make_plural
-LOCFLAGS = -I../CH07_Classes -I../CH06_Functions
+LOCFLAGS = -I../../CH07_Classes/examples -I../../CH06_Functions/examples
 
 querymain.exe: querymain.o TextQuery.o
 	$(CC) $(CCFLAGS) $(LOCFLAGS) querymain.o TextQuery.o \

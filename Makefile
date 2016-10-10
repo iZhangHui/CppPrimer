@@ -28,9 +28,9 @@ all:
 	cd CH07_Classes; make
 	cd CH08_TheIOLibrary; make
 	cd CH09_SequentialContainers; make
-	# cd CH10_GenericAlgorithms; make
-	# cd CH11_AssociativeContainers; make
-	# cd CH12_DynamicMemory; make
+	cd CH10_GenericAlgorithms; make
+	cd CH11_AssociativeContainers; make
+	cd CH12_DynamicMemory; make
 	# cd CH13_CopyControl; make
 	# cd CH14_OverloadedOperationsAndConversions; make
 	# cd CH15_ObjectOrientedProgramming; make
@@ -49,9 +49,9 @@ clean:
 	cd CH07_Classes; make clean
 	cd CH08_TheIOLibrary; make clean
 	cd CH09_SequentialContainers; make clean
-	# cd CH10_GenericAlgorithms; make clean
-	# cd CH11_AssociativeContainers; make clean
-	# cd CH12_DynamicMemory; make clean
+	cd CH10_GenericAlgorithms; make clean
+	cd CH11_AssociativeContainers; make clean
+	cd CH12_DynamicMemory; make clean
 	# cd CH13_CopyControl; make clean
 	# cd CH14_OverloadedOperationsAndConversions; make clean
 	# cd CH15_ObjectOrientedProgramming; make clean
@@ -70,9 +70,9 @@ clobber:
 	cd CH07_Classes; make clobber
 	cd CH08_TheIOLibrary; make clobber
 	cd CH09_SequentialContainers; make clobber
-	# cd CH10_GenericAlgorithms; make clobber
-	# cd CH11_AssociativeContainers; make clobber
-	# cd CH12_DynamicMemory; make clobber
+	cd CH10_GenericAlgorithms; make clobber
+	cd CH11_AssociativeContainers; make clobber
+	cd CH12_DynamicMemory; make clobber
 	# cd CH13_CopyControl; make clobber
 	# cd CH14_OverloadedOperationsAndConversions; make clobber
 	# cd CH15_ObjectOrientedProgramming; make clobber
