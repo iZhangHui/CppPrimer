@@ -4,7 +4,7 @@ OBJECTS = add_item2.exe doWhile.exe guess.exe ifgrades.exe \
 
 # tells make to use the file "../GNU_makefile_template", which
 # defines general rules for making .o and .exe files
-include ../GNU_makefile_template
+include ../../GNU_makefile_template
 
-LOCFLAGS = -I../CH01_GettingStarted
+LOCFLAGS = -I../../CH01_GettingStarted/examples
 

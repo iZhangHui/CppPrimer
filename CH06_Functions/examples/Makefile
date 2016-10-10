@@ -7,15 +7,15 @@ OBJECTS = arrRet.exe count-calls.exe errMsg_initList.exe\
 
 # tells make to use the file "../GNU_makefile_template", which
 # defines general rules for making .o and .exe files
-include ../GNU_makefile_template
+include ../../GNU_makefile_template
 
-LOCFLAGS = 
+LOCFLAGS =
 
 fact.o mainmath.o LocalMath.o: LocalMath.h
 
 fact.exe: fact.o LocalMath.o
 	$(CC) $(CCFLAGS) fact.o LocalMath.o -o fact.exe
 
-mainmath.exe: mainmath.o LocalMath.o 
+mainmath.exe: mainmath.o LocalMath.o
 	$(CC) $(CCFLAGS) mainmath.o LocalMath.o -o mainmath.exe
 

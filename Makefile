@@ -22,9 +22,9 @@ all:
 	cd CH01_GettingStarted; make
 	cd CH02_VariablesAndBasicTypes; make
 	cd CH03_StringsVectorsAndArrays; make
-	# cd CH04_Expressions; make
-	# cd CH05_Statements; make
-	# cd CH06_Functions; make
+	cd CH04_Expressions; make
+	cd CH05_Statements; make
+	cd CH06_Functions; make
 	# cd CH07_Classes; make
 	# cd CH08_TheIOLibrary; make
 	# cd CH09_SequentialContainers; make
@@ -43,9 +43,9 @@ clean:
 	cd CH01_GettingStarted; make clean
 	cd CH02_VariablesAndBasicTypes; make clean
 	cd CH03_StringsVectorsAndArrays; make clean
-	# cd CH04_Expressions; make clean
-	# cd CH05_Statements; make clean
-	# cd CH06_Functions; make clean
+	cd CH04_Expressions; make clean
+	cd CH05_Statements; make clean
+	cd CH06_Functions; make clean
 	# cd CH07_Classes; make clean
 	# cd CH08_TheIOLibrary; make clean
 	# cd CH09_SequentialContainers; make clean
@@ -64,9 +64,9 @@ clobber:
 	cd CH01_GettingStarted; make clobber
 	cd CH02_VariablesAndBasicTypes; make clobber
 	cd CH03_StringsVectorsAndArrays; make clobber
-	# cd CH04_Expressions; make clobber
-	# cd CH05_Statements; make clobber
-	# cd CH06_Functions; make clobber
+	cd CH04_Expressions; make clobber
+	cd CH05_Statements; make clobber
+	cd CH06_Functions; make clobber
 	# cd CH07_Classes; make clobber
 	# cd CH08_TheIOLibrary; make clobber
 	# cd CH09_SequentialContainers; make clobber

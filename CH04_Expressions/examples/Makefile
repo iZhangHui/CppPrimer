@@ -6,6 +6,6 @@ OBJECTS = arith-ex.exe arraysizeof.exe cond.exe \
 
 # tells make to use the file "../GNU_makefile_template", which
 # defines general rules for making .o and .exe files
-include ../GNU_makefile_template
+include ../../GNU_makefile_template
 
-LOCFLAGS = -I../CH02_VariablesAndBasicTypes
+LOCFLAGS = -I../../CH02_VariablesAndBasicTypes/examples
