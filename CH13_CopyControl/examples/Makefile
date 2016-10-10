@@ -6,9 +6,9 @@ OBJECTS = FolderMain.exe HasPtrUseCount.exe \
 
 # tells make to use the file "../GNU_makefile_template", which
 # defines general rules for making .o and .exe files
-include ../GNU_makefile_template
+include ../../GNU_makefile_template
 
-LOCFLAGS = -I../CH01_GettingStarted -I../CH07_Classes
+LOCFLAGS = -I../../CH01_GettingStarted/examples -I../../CH07_Classes/examples
 
 Folder.o FolderMain.o: Folder.h
 StrFolder.o StrFolderMain.o: StrFolder.h String.h

@@ -6,27 +6,27 @@ OBJECTS = andQueryTest.exe and_orQueryTest.exe \
 
 # tells make to use the file "../GNU_makefile_template", which
 # defines general rules for making .o and .exe files
-include ../GNU_makefile_template
+include ../../GNU_makefile_template
 
-LOCFLAGS = -I../CH12_DynamicMemory -I../CH06_Functions
+LOCFLAGS = -I../../ -I../../CH12_DynamicMemory/examples -I../../CH06_Functions/examples
 
 sample.o useQuote.o Quote.o: Quote.h
 vecBasket.o Basket_main.o Basket.o: Basket.h Quote.h
 
 get_print.o andQueryTest.o and_orQueryTest.o \
-wordQueryTest.o Query.o: Query.h ../CH12_DynamicMemory/TextQuery.h
+wordQueryTest.o Query.o: Query.h ../../CH12_DynamicMemory/examples/TextQuery.h
 
-wordQueryTest.exe: Query.o wordQueryTest.o ../CH12_DynamicMemory/TextQuery.o get_print.o
+wordQueryTest.exe: Query.o wordQueryTest.o ../../CH12_DynamicMemory/examples/TextQuery.o get_print.o
 	$(CC) $(CCFLAGS) $(LOCFLAGS) Query.o wordQueryTest.o \
-		../CH12_DynamicMemory/TextQuery.o get_print.o -o wordQueryTest.exe
+		../../CH12_DynamicMemory/examples/TextQuery.o get_print.o -o wordQueryTest.exe
 
-andQueryTest.exe: Query.o andQueryTest.o ../CH12_DynamicMemory/TextQuery.o get_print.o
+andQueryTest.exe: Query.o andQueryTest.o ../../CH12_DynamicMemory/examples/TextQuery.o get_print.o
 	$(CC) $(CCFLAGS) $(LOCFLAGS) Query.o andQueryTest.o \
-		../CH12_DynamicMemory/TextQuery.o get_print.o -o andQueryTest.exe
+		../../CH12_DynamicMemory/examples/TextQuery.o get_print.o -o andQueryTest.exe
 
-and_orQueryTest.exe: Query.o and_orQueryTest.o ../CH12_DynamicMemory/TextQuery.o get_print.o
+and_orQueryTest.exe: Query.o and_orQueryTest.o ../../CH12_DynamicMemory/examples/TextQuery.o get_print.o
 	$(CC) $(CCFLAGS) $(LOCFLAGS) Query.o and_orQueryTest.o \
-		../CH12_DynamicMemory/TextQuery.o get_print.o -o and_orQueryTest.exe
+		../../CH12_DynamicMemory/examples/TextQuery.o get_print.o -o and_orQueryTest.exe
 
 useQuote.exe: useQuote.o Quote.o
 	$(CC) $(CCFLAGS) $(LOCFLAGS) useQuote.o Quote.o -o useQuote.exe

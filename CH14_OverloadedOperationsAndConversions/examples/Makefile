@@ -4,9 +4,9 @@ OBJECTS = absInt.exe add.exe calc.exe directcall.exe \
 
 # tells make to use the file "../GNU_makefile_template", which
 # defines general rules for making .o and .exe files
-include ../GNU_makefile_template
+include ../../GNU_makefile_template
 
-LOCFLAGS = -I../CH01_GettingStarted -I../CH06_Functions
+LOCFLAGS = -I../../CH01_GettingStarted/examples -I../../CH06_Functions/examples
 
 add.o directcall.o Sales_data.o: Sales_data.h
 

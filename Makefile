@@ -31,9 +31,9 @@ all:
 	cd CH10_GenericAlgorithms; make
 	cd CH11_AssociativeContainers; make
 	cd CH12_DynamicMemory; make
-	# cd CH13_CopyControl; make
-	# cd CH14_OverloadedOperationsAndConversions; make
-	# cd CH15_ObjectOrientedProgramming; make
+	cd CH13_CopyControl; make
+	cd CH14_OverloadedOperationsAndConversions; make
+	cd CH15_ObjectOrientedProgramming; make
 	# cd CH16_TemplatesAndGenericProgramming; make
 	# cd CH17_SpecializedLibraryFacilities; make
 	# cd CH18_ToolsForLargePrograms; make
@@ -52,9 +52,9 @@ clean:
 	cd CH10_GenericAlgorithms; make clean
 	cd CH11_AssociativeContainers; make clean
 	cd CH12_DynamicMemory; make clean
-	# cd CH13_CopyControl; make clean
-	# cd CH14_OverloadedOperationsAndConversions; make clean
-	# cd CH15_ObjectOrientedProgramming; make clean
+	cd CH13_CopyControl; make clean
+	cd CH14_OverloadedOperationsAndConversions; make clean
+	cd CH15_ObjectOrientedProgramming; make clean
 	# cd CH16_TemplatesAndGenericProgramming; make clean
 	# cd CH17_SpecializedLibraryFacilities; make clean
 	# cd CH18_ToolsForLargePrograms; make clean
@@ -73,9 +73,9 @@ clobber:
 	cd CH10_GenericAlgorithms; make clobber
 	cd CH11_AssociativeContainers; make clobber
 	cd CH12_DynamicMemory; make clobber
-	# cd CH13_CopyControl; make clobber
-	# cd CH14_OverloadedOperationsAndConversions; make clobber
-	# cd CH15_ObjectOrientedProgramming; make clobber
+	cd CH13_CopyControl; make clobber
+	cd CH14_OverloadedOperationsAndConversions; make clobber
+	cd CH15_ObjectOrientedProgramming; make clobber
 	# cd CH16_TemplatesAndGenericProgramming; make clobber
 	# cd CH17_SpecializedLibraryFacilities; make clobber
 	# cd CH18_ToolsForLargePrograms; make clobber
