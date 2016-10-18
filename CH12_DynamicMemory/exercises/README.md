@@ -34,7 +34,7 @@ Discussion over this exercise on [Stack Overflow](http://stackoverflow.com/quest
 
 Discussion over this exercise more on [douban](http://www.douban.com/group/topic/61573279/)(chinese)
 
-##Exercise 12.4
+## Exercise 12.4
 >In our check function we didn’t check whether i was greater than zero. Why is it okay to omit that check?
 
 Because the type of `i` is `std::vector<std::string>::size_type` which
@@ -42,7 +42,7 @@ is an `unsigned`.When any argument less than 0 is passed in, it will convert
 to a number greater than 0. In short `std::vector<std::string>::size_type`
 will ensure it is a positive number or 0.
 
-##Exercise 12.5
+## Exercise 12.5
 >We did not make the constructor that takes an initializer_list explicit (§ 7.5.4, p. 296). Discuss the pros and ons of this design choice
 
 keyword `explicit` prevents automatic conversion from an `initializer_list` to `StrBlob`.
@@ -78,8 +78,9 @@ the values that were read. Remember to delete the vector at the appropriate time
 ##[Exercise 12.7](ex12_07.cpp)
 >Redo the previous exercise, this time using shared_ptr.
 
-##Exercise 12.8
+## Exercise 12.8
 >Explain what if anything is wrong with the following function.
+
 ```cpp
 bool b() {
 int* p = new int;
@@ -90,8 +91,9 @@ return p;
 
 The p will convert to a bool , which means that the dynamic memory allocated has no chance to be freed. As a result, memory leakage will occur.
 
-##Exercise 12.9
+## Exercise 12.9
 >Explain what happens in the following code:
+
 ```cpp
 int *q = new int(42), *r = new int(100);
 r = q;
@@ -107,7 +109,7 @@ Memory leakage happens. Because after `r = q` was executed, no pointer points to
 It's safe. Because after 'r2 = q2', the reference count belongs to r2 reduce to 0 and the reference count belongs to q2 increase to 2, then the memory allocated by r2 will be released automatically.
 
 
-##[Exercise 12.10](ex12_10.cpp)
+## [Exercise 12.10](ex12_10.cpp)
 >Explain whether the following call to the process function
 defined on page 464 is correct. If not, how would you correct the call?
 
@@ -118,8 +120,9 @@ process(shared_ptr<int>(p));
 
 Correct.
 
-##[Exercise 12.11](ex12_11.cpp)
+## [Exercise 12.11](ex12_11.cpp)
 >What would happen if we called process as follows?
+
 ```cpp
 process(shared_ptr<int>(p.get()));
 ```
@@ -129,11 +132,11 @@ to the parameter.However it is not a copy of p. As a result, at end of this
 main function p will free the memory that has been freed inside process ().
 That's why "double freed or corruption" was generated.
 
-##[Exercise 12.12](ex12_12.cpp)
+## [Exercise 12.12](ex12_12.cpp)
 >Using the declarations of p and sp explain each of the following calls to process.
 If the call is legal, explain what it does. If the call is illegal, explain why:
-`
-``cpp
+
+```cpp
 auto p = new int();
 auto sp = make_shared<int>();
 (a) process(sp);
@@ -146,11 +149,11 @@ auto sp = make_shared<int>();
 (b) illegale. plain pointer can not convert to smart pointer implicitly.
 (c) illegale. plain pointer can not convert to smart pointer implicitly.
 (d) Legal. But it's a bad practice to do so. Because using smart pointer
-    together with raw pointer could potentially cause problems.
-    For example double free as shown in [Exercise 12.11](ex12_11.cpp)
+together with raw pointer could potentially cause problems.
+For example double free as shown in [Exercise 12.11](ex12_11.cpp)
 
 
-##[Exercise 12.13](ex12_13.cpp)
+## [Exercise 12.13](ex12_13.cpp)
 >What happens if we execute the following code?
 
 ```cpp
