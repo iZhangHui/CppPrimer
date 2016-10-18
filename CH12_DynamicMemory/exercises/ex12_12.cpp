@@ -12,9 +12,6 @@
  * @author Herny Zhang	<zhanghui629@gmail.com>
  */
 
-#include <vector>
-using std::vector;
-
 #include <memory>
 using std::shared_ptr;
 using std::make_shared;
