@@ -90,7 +90,7 @@ return p;
 
 The p will convert to a bool , which means that the dynamic memory allocated has no chance to be freed. As a result, memory leakage will occur.
 
-Exercise 12.9
+##Exercise 12.9
 >Explain what happens in the following code:
 ```cpp
 int *q = new int(42), *r = new int(100);
@@ -105,3 +105,58 @@ Memory leakage happens. Because after `r = q` was executed, no pointer points to
 - to `q2` and `r2`:
 
 It's safe. Because after 'r2 = q2', the reference count belongs to r2 reduce to 0 and the reference count belongs to q2 increase to 2, then the memory allocated by r2 will be released automatically.
+
+
+##[Exercise 12.10](ex12_10.cpp)
+>Explain whether the following call to the process function
+defined on page 464 is correct. If not, how would you correct the call?
+
+```cpp
+shared_ptr<int> p(new int(42));
+process(shared_ptr<int>(p));
+```
+
+Correct.
+
+##[Exercise 12.11](ex12_11.cpp)
+>What would happen if we called process as follows?
+```cpp
+process(shared_ptr<int>(p.get()));
+```
+
+shared_ptr<int>(p.get()) construct a temporary shared_ptr and copy it
+to the parameter.However it is not a copy of p. As a result, at end of this
+main function p will free the memory that has been freed inside process ().
+That's why "double freed or corruption" was generated.
+
+##[Exercise 12.12](ex12_12.cpp)
+>Using the declarations of p and sp explain each of the following calls to process.
+If the call is legal, explain what it does. If the call is illegal, explain why:
+`
+``cpp
+auto p = new int();
+auto sp = make_shared<int>();
+(a) process(sp);
+(b) process(new int());
+(c) process(p);
+(d) process(shared_ptr<int>(p));
+```
+
+(a) legal. Just copy sp which is a shared_ptr to process().
+(b) illegale. plain pointer can not convert to smart pointer implicitly.
+(c) illegale. plain pointer can not convert to smart pointer implicitly.
+(d) Legal. But it's a bad practice to do so. Because using smart pointer
+    together with raw pointer could potentially cause problems.
+    For example double free as shown in [Exercise 12.11](ex12_11.cpp)
+
+
+##[Exercise 12.13](ex12_13.cpp)
+>What happens if we execute the following code?
+
+```cpp
+auto sp = make_shared<int>();
+auto p = sp.get();
+delete p;
+```
+
+generate a runtime error : double free
