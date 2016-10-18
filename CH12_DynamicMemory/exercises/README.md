@@ -163,3 +163,11 @@ delete p;
 ```
 
 generate a runtime error : double free
+
+## [Exercise 12.14](ex12_14.cpp)
+>Write your own version of a function that uses a shared_ptr to manage a connection.
+
+## [Exercise 12.15](ex12_15.cpp)
+>Rewrite the first exercise to use a lambda (§ 10.3.2, p.388) in place of the end_connection function.
+
+
