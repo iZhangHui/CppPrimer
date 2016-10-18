@@ -60,3 +60,33 @@ int main(int argc, char const *argv[])
 
 // 	return 0;
 // }
+
+// class Test
+// {
+// public:
+// 	Test() : i(0) { cout << "Test constructor." << endl; }
+// 	~Test() { cout << "Test destructor." << endl; }
+// private:
+// 	int i;
+// };
+
+// void process(shared_ptr<Test> ptr)
+// {
+// 	cout << "insided the process function: " << ptr.use_count() << endl;
+// }
+
+// int main(int argc, char const *argv[])
+// {
+// 	{
+// 		shared_ptr<Test> p(new Test());
+
+// 		cout << p.use_count() << endl;
+// 		process(shared_ptr<Test>(p.get()));
+// 		cout << p.use_count() << endl;
+
+// 		// delete p.get();
+// 	}
+
+
+// 	return 0;
+// }
