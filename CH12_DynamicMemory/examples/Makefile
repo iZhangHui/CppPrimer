@@ -2,7 +2,7 @@
 OBJECTS = allocPtr.exe allocSP.exe \
 		  oknew.exe querymain.exe release.exe \
 		  unique.exe UP.exe usealloc.exe usealloc2.exe \
-		  useBlob.exe weak.exe
+		  useBlob.exe useBlob2.exe weak.exe
 
 # tells make to use the file "../GNU_makefile_template", which
 # defines general rules for making .o and .exe files

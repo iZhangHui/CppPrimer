@@ -197,4 +197,19 @@ Because other shared_ptr that points the same object can still delete this
 object.Thus, it's meaningless to provide this member
 more detail can be found a thread on [Stack Overflow](http://stackoverflow.com/questions/1525764/how-to-release-pointer-from-boostshared-ptr)
 
+## [Exercise 12.19](../examples/StrBlob.h)
+>Define your own version of StrBlobPtr and update your StrBlob class
+with the appropriate friend declaration and begin and end members.
 
+## [Exercise 12.20](../examples/useBlob2.cc)
+>Write a program that reads an input file a line at a time into a
+StrBlob and uses a StrBlobPtr to print each element in that StrBlob.
+
+## Exercise 12.20
+>We could have written StrBlobPtr’s deref member as ollows:
+```cpp
+std::string& deref() const
+{ return (*check(curr, "dereference past end"))[curr]; }```
+Which version do you think is better and why?
+
+The original one is better, because it's more readable.
