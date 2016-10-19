@@ -37,9 +37,11 @@
 
 // forward declaration needed for friend declaration in StrBlob
 class StrBlobPtr;
+class ConstStrBlobPtr;
 
 class StrBlob {
 	friend class StrBlobPtr;
+	friend class ConstStrBlobPtr;
 public:
 	typedef std::vector<std::string>::size_type size_type;
 
@@ -63,6 +65,9 @@ public:
 	// interface to StrBlobPtr
 	StrBlobPtr begin();  // can't be defined until StrBlobPtr is
 	StrBlobPtr end();
+
+	ConstStrBlobPtr cbegin();
+	ConstStrBlobPtr cend();
 private:
 	std::shared_ptr<std::vector<std::string>> data;
 	// throws msg if data[i] isn't valid
@@ -89,8 +94,32 @@ private:
 	std::size_t curr;	// current position within the array
 };
 
+class ConstStrBlobPtr {
+	friend bool eq(const ConstStrBlobPtr&, const ConstStrBlobPtr&);
+public:
+	ConstStrBlobPtr() : curr(0) { }
+	ConstStrBlobPtr(const StrBlob& a, size_t sz = 0) : wptr(a.data), curr(sz) { }
+
+	const std::string& deref() const;
+	ConstStrBlobPtr& incr();
+	ConstStrBlobPtr& decr();
+private:
+	std::shared_ptr<std::vector<std::string>>
+		check(std::size_t, const std::string&) const;
+
+	std::weak_ptr<std::vector<std::string>> wptr;
+	std::size_t curr;
+};
+
 inline
 std::string& StrBlobPtr::deref() const
+{
+	auto p = check(curr, "dereference past end");
+	return (*p)[curr];	// (*p) is the vector to which this object points
+}
+
+inline
+const std::string& ConstStrBlobPtr::deref() const
 {
 	auto p = check(curr, "dereference past end");
 	return (*p)[curr];	// (*p) is the vector to which this object points
@@ -120,7 +149,16 @@ StrBlobPtr& StrBlobPtr::incr()
 }
 
 inline
-StrBlobPtr& StrBlobPtr::decr()
+ConstStrBlobPtr& ConstStrBlobPtr::incr()
+{
+	// if curr already points past the end of the container, can't increment it
+	check(curr, "increment past end of StrBlobPtr");
+	++curr;	// advance the current state
+	return *this;
+}
+
+inline
+ConstStrBlobPtr& ConstStrBlobPtr::decr()
 {
 	// if curr is zero, decrementing it will yield an invalid subscript
 	--curr;	// move the current state back one element}
@@ -144,6 +182,21 @@ StrBlob::end()
 	return ret;
 }
 
+inline
+ConstStrBlobPtr
+StrBlob::cbegin()
+{
+	return ConstStrBlobPtr(*this);
+}
+
+inline
+ConstStrBlobPtr
+StrBlob::cend()
+{
+	auto ret = ConstStrBlobPtr(*this, data->size());
+	return ret;
+}
+
 // named equality operators for StrBlobPtr
 inline
 bool eq(const StrBlobPtr& lhs, const StrBlobPtr& rhs)
@@ -161,6 +214,23 @@ bool eq(const StrBlobPtr& lhs, const StrBlobPtr& rhs)
 
 inline
 bool neq(const StrBlobPtr& lhs, const StrBlobPtr& rhs)
+{
+	return !eq(lhs, rhs);
+}
+
+inline
+bool eq(const ConstStrBlobPtr& lhs, const ConstStrBlobPtr& rhs)
+{
+	auto l = lhs.wptr.lock();
+	auto r = rhs.wptr.lock();
+	if (l == r)
+		return (!r || lhs.curr == rhs.curr);
+	else
+		return false;
+}
+
+inline
+bool neq(const ConstStrBlobPtr& lhs, const ConstStrBlobPtr& rhs)
 {
 	return !eq(lhs, rhs);
 }

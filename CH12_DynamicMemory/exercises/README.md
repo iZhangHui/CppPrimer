@@ -214,3 +214,8 @@ std::string& deref() const
 Which version do you think is better and why?
 
 The original one is better, because it's more readable.
+
+## [Exercise 12.21](../examples/StrBlob.h)
+>What changes would need to be made to StrBlobPtr to create a class
+that can be used with a const StrBlob? Define a class named ConstStrBlobPtr
+that can point to a const StrBlob.
