@@ -205,7 +205,7 @@ with the appropriate friend declaration and begin and end members.
 >Write a program that reads an input file a line at a time into a
 StrBlob and uses a StrBlobPtr to print each element in that StrBlob.
 
-## Exercise 12.20
+## Exercise 12.21
 >We could have written StrBlobPtr’s deref member as ollows:
 ```cpp
 std::string& deref() const
@@ -215,7 +215,7 @@ Which version do you think is better and why?
 
 The original one is better, because it's more readable.
 
-## [Exercise 12.21](../examples/StrBlob.h)
+## [Exercise 12.22](../examples/StrBlob.h)
 >What changes would need to be made to StrBlobPtr to create a class
 that can be used with a const StrBlob? Define a class named ConstStrBlobPtr
 that can point to a const StrBlob.
