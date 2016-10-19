@@ -209,7 +209,8 @@ StrBlob and uses a StrBlobPtr to print each element in that StrBlob.
 >We could have written StrBlobPtr’s deref member as ollows:
 ```cpp
 std::string& deref() const
-{ return (*check(curr, "dereference past end"))[curr]; }```
+{ return (*check(curr, "dereference past end"))[curr]; }
+```
 Which version do you think is better and why?
 
 The original one is better, because it's more readable.
