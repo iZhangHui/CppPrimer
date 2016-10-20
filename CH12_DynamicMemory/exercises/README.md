@@ -239,3 +239,7 @@ int *pa = new int[10];
 ```cpp
 delete [] pa;
 ```
+
+## [Exercise 12.26](ex12_26.cpp)
+>Rewrite the program on page 481 using an allocator.
+
