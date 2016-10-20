@@ -175,7 +175,7 @@ generate a runtime error : double free
 messages if we attempt to copy or assign a unique_ptr. Write a program
 that contains these errors to see how your compiler diagnoses them.
 
-## [Exercise 12.17](ex12_17.cpp)
+c
 >Which of the following unique_ptr declarations are illegal or likely to result
 in subsequent program error? Explain what the problem is with each one.
 
@@ -219,3 +219,9 @@ The original one is better, because it's more readable.
 >What changes would need to be made to StrBlobPtr to create a class
 that can be used with a const StrBlob? Define a class named ConstStrBlobPtr
 that can point to a const StrBlob.
+
+## [Exercise 12.23](ex12_23.cpp)
+>Write a program to concatenate two string literals, putting the result in
+a dynamically allocated array of char.
+Write a program to concatenate two library strings that have the same value
+as the literals used in the first program.
