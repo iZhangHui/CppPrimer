@@ -225,3 +225,8 @@ that can point to a const StrBlob.
 a dynamically allocated array of char.
 Write a program to concatenate two library strings that have the same value
 as the literals used in the first program.
+
+## [Exercise 12.24](ex12_24.cpp)
+>Write a program that reads a string from the standard input into a dynamically
+allocated character array. Describe how your program handles varying size inputs.
+Test your program by giving it a string of data that is longer than the array size you’ve allocated.
