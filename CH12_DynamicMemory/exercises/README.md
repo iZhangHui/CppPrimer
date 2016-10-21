@@ -243,3 +243,11 @@ delete [] pa;
 ## [Exercise 12.26](ex12_26.cpp)
 >Rewrite the program on page 481 using an allocator.
 
+
+## Exercise 12.27 [Header](ex12_27_30.h)|[Implementation](ex12_27_30.cpp)|[Main](ex12_27_30_main.cpp)
+>The TextQuery and QueryResult classes use only capabilities that we have
+already covered. Without looking ahead, write your own versions of these classes.
+
+## Exercise 12.30 [Header](ex12_27_30.h)|[Implementation](ex12_27_30.cpp)|[Main](ex12_27_30_main.cpp)
+>Define your own versions of the TextQuery and QueryResult classes and
+execute the runQueries function from § 12.3.1(p. 486).
