@@ -271,3 +271,9 @@ I prefer the do while, because it looks clearer according to our logic.
 ## Exercise 12.30 [Header](ex12_27_30.h)|[Implementation](ex12_27_30.cpp)|[Main](ex12_27_30_main.cpp)
 >Define your own versions of the TextQuery and QueryResult classes and
 execute the runQueries function from § 12.3.1(p. 486).
+
+## Exercise 12.31
+>What difference(s) would it make if we used a vector instead of a set
+to hold the line numbers? Which approach is better? Why?
+
+The vector can not ensure no duplicates. Hence, in terms of this programme set is a better option.
