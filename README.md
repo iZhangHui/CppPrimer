@@ -1,11 +1,15 @@
-### C++ Primer 5th
+## C++ Primer - 5th Edition
+![](https://cloud.githubusercontent.com/assets/6889915/19618212/3a4d1396-9876-11e6-85fc-22e78e101a51.jpg)
 
-### Notes
+![Language](https://img.shields.io/badge/language-C%2B%2B11-orange.svg)
+=========================
 
-- Use `G++ 5.4+`, `Clang++ 3.8+` and [others](http://en.cppreference.com/w/cpp/compiler_support).
+## Compilers recommended
+- Ubuntu LTS 16.04.
+- Use `G++ 5.4`, `Clang++ 3.8`.
 - Use `-std=c++11`(recommend: `-pedantic -Wall`) flag for compiling.
 
-### Contents
+## Contents
 
 - [Chapter 1. Getting Started]()
 - Part I: The Basics
