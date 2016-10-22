@@ -253,6 +253,21 @@ Your program should take a file and interact with a user to query for words in t
 Use vector, map, and set containers to hold the data for the file and to generate the
 results for the queries.
 
+## Exercise 12.29
+>We could have written the loop to manage the interaction with the user as a do while
+(§ 5.4.4, p. 189) loop. Rewrite the loop to use a do while. Explain which version you prefer and why.
+```cpp
+do {
+	cout << "enter word to look for, or q to quit: ";
+	string s;
+	// stop if we hit end-of-file on the input or if a 'q' is entered
+	if (!(cin >> s) || s == "q") break;
+	// run the query and print the results
+	print(cout, tq.query(s)) << endl;
+} while (true);
+```
+I prefer the do while, because it looks clearer according to our logic.
+
 ## Exercise 12.30 [Header](ex12_27_30.h)|[Implementation](ex12_27_30.cpp)|[Main](ex12_27_30_main.cpp)
 >Define your own versions of the TextQuery and QueryResult classes and
 execute the runQueries function from § 12.3.1(p. 486).
