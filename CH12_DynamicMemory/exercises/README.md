@@ -243,10 +243,15 @@ delete [] pa;
 ## [Exercise 12.26](ex12_26.cpp)
 >Rewrite the program on page 481 using an allocator.
 
-
 ## Exercise 12.27 [Header](ex12_27_30.h)|[Implementation](ex12_27_30.cpp)|[Main](ex12_27_30_main.cpp)
 >The TextQuery and QueryResult classes use only capabilities that we have
 already covered. Without looking ahead, write your own versions of these classes.
+
+## [Exercise 12.28](ex12_28.cpp)
+>Write a program to implement text queries without defining classes to manage the data.
+Your program should take a file and interact with a user to query for words in that file.
+Use vector, map, and set containers to hold the data for the file and to generate the
+results for the queries.
 
 ## Exercise 12.30 [Header](ex12_27_30.h)|[Implementation](ex12_27_30.cpp)|[Main](ex12_27_30_main.cpp)
 >Define your own versions of the TextQuery and QueryResult classes and
