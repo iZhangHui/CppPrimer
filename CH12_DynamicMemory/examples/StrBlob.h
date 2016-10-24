@@ -127,7 +127,20 @@ const std::string& ConstStrBlobPtr::deref() const
 
 inline
 std::shared_ptr<std::vector<std::string>>
-StrBlobPtr::check(std::size_t i, const std::string &msg) const
+StrBlobPtr::check(std::size_t i, const std::string& msg) const
+{
+	auto ret = wptr.lock();	// is the vector still around?
+	if (!ret)
+		throw std::runtime_error("unbound StrBlobPtr");
+
+	if (i >= ret->size())
+		throw std::out_of_range(msg);
+	return ret;	// otherwise, return a shared_ptr to the vector
+}
+
+inline
+std::shared_ptr<std::vector<std::string>>
+ConstStrBlobPtr::check(std::size_t i, const std::string& msg) const
 {
 	auto ret = wptr.lock();	// is the vector still around?
 	if (!ret)
