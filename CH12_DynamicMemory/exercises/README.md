@@ -277,3 +277,6 @@ execute the runQueries function from § 12.3.1(p. 486).
 to hold the line numbers? Which approach is better? Why?
 
 The vector can not ensure no duplicates. Hence, in terms of this programme set is a better option.
+
+## Exercise 12.32 [Header](ex12_32.h)|[Implementation](ex12_32.cpp)|[Main](ex12_32_main.cpp)
+>Rewrite the TextQuery and QueryResult classes to use a StrBlob instead of a vector<string> to hold the input file.
