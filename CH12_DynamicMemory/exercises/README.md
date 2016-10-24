@@ -19,7 +19,7 @@ At the end of this code,
 >Write your own version of the StrBlob class including the
 const versions of front and back.
 
-[StrBlob](ex12_02.h) | [Test](ex12_02_test.cpp)
+[StrBlob](ex12_02.h) | [Test](ex12_02_test.cc)
 
 ## Exercise 12.3
 >Does this class need const versions of push_back and pop_back? If so, add them. If not, why aren’t they needed?
@@ -69,13 +69,13 @@ Sales_data& Sales_data::combine(const Sales_data& rhs)
 { ... }
 ```
 
-##[Exercise 12.6](ex12_06.cpp)
+##[Exercise 12.6](ex12_06.cc)
 >Write a function that returns a dynamically allocated vector
 of ints. Pass that vector to another function that reads the standard input
 to give values to the elements. Pass the vector to another function to print
 the values that were read. Remember to delete the vector at the appropriate time.
 
-##[Exercise 12.7](ex12_07.cpp)
+##[Exercise 12.7](ex12_07.cc)
 >Redo the previous exercise, this time using shared_ptr.
 
 ## Exercise 12.8
@@ -109,7 +109,7 @@ Memory leakage happens. Because after `r = q` was executed, no pointer points to
 It's safe. Because after 'r2 = q2', the reference count belongs to r2 reduce to 0 and the reference count belongs to q2 increase to 2, then the memory allocated by r2 will be released automatically.
 
 
-## [Exercise 12.10](ex12_10.cpp)
+## [Exercise 12.10](ex12_10.cc)
 >Explain whether the following call to the process function
 defined on page 464 is correct. If not, how would you correct the call?
 
@@ -120,7 +120,7 @@ process(shared_ptr<int>(p));
 
 Correct.
 
-## [Exercise 12.11](ex12_11.cpp)
+## [Exercise 12.11](ex12_11.cc)
 >What would happen if we called process as follows?
 
 ```cpp
@@ -132,7 +132,7 @@ to the parameter.However it is not a copy of p. As a result, at end of this
 main function p will free the memory that has been freed inside process ().
 That's why "double freed or corruption" was generated.
 
-## [Exercise 12.12](ex12_12.cpp)
+## [Exercise 12.12](ex12_12.cc)
 >Using the declarations of p and sp explain each of the following calls to process.
 If the call is legal, explain what it does. If the call is illegal, explain why:
 
@@ -150,10 +150,10 @@ auto sp = make_shared<int>();
 (c) illegale. plain pointer can not convert to smart pointer implicitly.
 (d) Legal. But it's a bad practice to do so. Because using smart pointer
 together with raw pointer could potentially cause problems.
-For example double free as shown in [Exercise 12.11](ex12_11.cpp)
+For example double free as shown in [Exercise 12.11](ex12_11.cc)
 
 
-## [Exercise 12.13](ex12_13.cpp)
+## [Exercise 12.13](ex12_13.cc)
 >What happens if we execute the following code?
 
 ```cpp
@@ -164,13 +164,13 @@ delete p;
 
 generate a runtime error : double free
 
-## [Exercise 12.14](ex12_14.cpp)
+## [Exercise 12.14](ex12_14.cc)
 >Write your own version of a function that uses a shared_ptr to manage a connection.
 
-## [Exercise 12.15](ex12_15.cpp)
+## [Exercise 12.15](ex12_15.cc)
 >Rewrite the first exercise to use a lambda (§ 10.3.2, p.388) in place of the end_connection function.
 
-## [Exercise 12.16](ex12_16.cpp)
+## [Exercise 12.16](ex12_16.cc)
 >Compilers don’t always give easy-to-understand error
 messages if we attempt to copy or assign a unique_ptr. Write a program
 that contains these errors to see how your compiler diagnoses them.
@@ -220,13 +220,13 @@ The original one is better, because it's more readable.
 that can be used with a const StrBlob? Define a class named ConstStrBlobPtr
 that can point to a const StrBlob.
 
-## [Exercise 12.23](ex12_23.cpp)
+## [Exercise 12.23](ex12_23.cc)
 >Write a program to concatenate two string literals, putting the result in
 a dynamically allocated array of char.
 Write a program to concatenate two library strings that have the same value
 as the literals used in the first program.
 
-## [Exercise 12.24](ex12_24.cpp)
+## [Exercise 12.24](ex12_24.cc)
 >Write a program that reads a string from the standard input into a dynamically
 allocated character array. Describe how your program handles varying size inputs.
 Test your program by giving it a string of data that is longer than the array size you’ve allocated.
@@ -240,14 +240,14 @@ int *pa = new int[10];
 delete [] pa;
 ```
 
-## [Exercise 12.26](ex12_26.cpp)
+## [Exercise 12.26](ex12_26.cc)
 >Rewrite the program on page 481 using an allocator.
 
-## Exercise 12.27 [Header](ex12_27_30.h)|[Implementation](ex12_27_30.cpp)|[Main](ex12_27_30_main.cpp)
+## Exercise 12.27 [Header](ex12_27_30.h)|[Implementation](ex12_27_30.cc)|[Main](ex12_27_30_main.cc)
 >The TextQuery and QueryResult classes use only capabilities that we have
 already covered. Without looking ahead, write your own versions of these classes.
 
-## [Exercise 12.28](ex12_28.cpp)
+## [Exercise 12.28](ex12_28.cc)
 >Write a program to implement text queries without defining classes to manage the data.
 Your program should take a file and interact with a user to query for words in that file.
 Use vector, map, and set containers to hold the data for the file and to generate the
@@ -268,7 +268,7 @@ do {
 ```
 I prefer the do while, because it looks clearer according to our logic.
 
-## Exercise 12.30 [Header](ex12_27_30.h)|[Implementation](ex12_27_30.cpp)|[Main](ex12_27_30_main.cpp)
+## Exercise 12.30 [Header](ex12_27_30.h)|[Implementation](ex12_27_30.cc)|[Main](ex12_27_30_main.cc)
 >Define your own versions of the TextQuery and QueryResult classes and
 execute the runQueries function from § 12.3.1(p. 486).
 
@@ -278,7 +278,7 @@ to hold the line numbers? Which approach is better? Why?
 
 The vector can not ensure no duplicates. Hence, in terms of this programme set is a better option.
 
-## Exercise 12.32 [Header](ex12_32.h)|[Implementation](ex12_32.cpp)|[Main](ex12_32_main.cpp)
+## Exercise 12.32 [Header](ex12_32.h)|[Implementation](ex12_32.cc)|[Main](ex12_32_main.cc)
 >Rewrite the TextQuery and QueryResult classes to use a StrBlob instead of a vector<string> to hold the input file.
 
 ## [Exercise 12.33](../examples/QueryResult.h)
