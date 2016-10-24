@@ -280,3 +280,9 @@ The vector can not ensure no duplicates. Hence, in terms of this programme set i
 
 ## Exercise 12.32 [Header](ex12_32.h)|[Implementation](ex12_32.cpp)|[Main](ex12_32_main.cpp)
 >Rewrite the TextQuery and QueryResult classes to use a StrBlob instead of a vector<string> to hold the input file.
+
+## [Exercise 12.33](../examples/QueryResult.h)
+>In Chapter 15 we’ll extend our query system and will need some additional members
+in the QueryResult class. Add members named begin and end that return iterators into
+the set of line numbers returned by a given query, and a member named get_file that
+returns a shared_ptr to the file in the QueryResult object.
