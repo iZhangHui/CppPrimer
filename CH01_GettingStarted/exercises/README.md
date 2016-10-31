@@ -144,3 +144,115 @@ that subtracts 1. Use the decrement operator to write a while that prints the nu
 ##[Exercise 1.11](ex01_11.cc)
 >Write a program that prompts the user for two integers.
 Print each number in the range specified by those two integers.
+
+##Exercise 1.12
+> What does the following for loop do? What is the final value of sum?
+```cpp
+int sum = 0;
+for (int i = -100; i <= 100; ++i)
+sum += i;
+```
+
+the loop sums the numbers from -100 to 100. the final value of sum is zero.
+
+##Exercise 1.13
+> Rewrite the exercises from § 1.4.1 (p. 13) using for loops.
+
+```cpp
+#include <iostream>
+
+int main(int argc, char const *argv[])
+{
+    int sum = 0;
+    for (int i = 50; i <= 100; ++i) {
+        sum += i;
+    }
+    std::cout << "the sum is: " << sum << std::endl;
+
+    return 0;
+}
+```
+
+##Exercise 1.14
+> Compare and contrast the loops that used a for with those
+using a while. Are there advantages or disadvantages to using either form?
+
+The main difference between the for's and the while's is a matter of pragmatics:
+we usually use for when there is a known number of iterations, and use while
+constructs when the number of iterations in not known in advance.
+The while vs do ... while issue is also of pragmatics, the second executes
+the instructions once at start, and afterwards it behaves just like the simple while.
+
+
+[A similar question on Stack Overflow](http://stackoverflow.com/questions/2950931/for-vs-while-in-c-programming)
+
+##Exercise 1.15
+> Write programs that contain the common errors discussed in
+the box on page 16. Familiarize yourself with the messages the compiler
+generates.
+
+Nothing to present here.
+
+##Exercise 1.16
+>Write your own version of a program that prints the sum of
+a set of integers read from cin.
+
+```cpp
+#include <iostream>
+int main(int argc, char const *argv[])
+{
+    int sum = 0;
+    for (int val; std::cin >> val; sum += val);
+    std::cout << sum << std::endl;
+
+    return 0;
+}
+```
+
+##Exercise 1.17
+
+> What happens in the program presented in this section if the input values are all equal? What if there are no duplicated values?
+
+If the input values are all equal, it will print a line which shows the count of the number you input.
+
+If there are no duplicated values, when different values input, a new line will be printed if you click `Enter`.
+
+##[Exercise 1.18](../examples/occurs.cc)
+
+> Compile and run the program from this section giving it only equal values as input. Run it again giving it values in which no number is repeated.
+
+
+##[Exercise 1.19](ex01_11.cc)
+
+> Revise the program you wrote for the exercises in § 1.4.1 (p. 13) that printed a range of numbers so that it handles input in which the first number is smaller than the second.
+
+
+##[Exercise 1.20](../examples/item_io.cc)
+
+> http://www.informit.com/title/032174113 contains a copy of Sales_item.h in the Chapter 1 code directory. Copy that file to your working directory. Use it to write a program that reads a set of book sales transactions, writing each transaction to the standard output.
+
+./item_io.exe < data/add_item
+
+##[Exercise 1.21](../examples/add_item2.cc)
+> Write a program that reads two Sales_item objects that have the same ISBN and produces their sum.
+
+The program should check whether the objects have the same ISBN.
+
+
+##[Exercise 1.22](../examples/avg_price.cc)
+
+> Write a program that reads several transactions for the same ISBN. Write the sum of all the transactions that were read.
+
+
+##[Exercise 1.23]()
+> Write a program that reads several transactions and counts how many transactions occur for each ISBN.
+
+
+##Exercise 1.24
+> Test the previous program by giving multiple transactions representing multiple ISBNs.
+The records for each ISBN should be grouped together.
+
+
+##[Exercise 1.25](ex01_22.cc)
+> Using the Sales_item.h header from the Web site,
+compile and execute the bookstore program presented in this section.
