@@ -244,7 +244,7 @@ The program should check whether the objects have the same ISBN.
 > Write a program that reads several transactions for the same ISBN. Write the sum of all the transactions that were read.
 
 
-##[Exercise 1.23]()
+##[Exercise 1.23](../examples/avg_price.cc)
 > Write a program that reads several transactions and counts how many transactions occur for each ISBN.
 
 
@@ -253,6 +253,6 @@ The program should check whether the objects have the same ISBN.
 The records for each ISBN should be grouped together.
 
 
-##[Exercise 1.25](ex01_22.cc)
+##[Exercise 1.25](../examples/avg_price.cc)
 > Using the Sales_item.h header from the Web site,
 compile and execute the bookstore program presented in this section.
