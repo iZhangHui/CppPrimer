@@ -3,14 +3,25 @@
 ## Exercise 11.1:
 >Describe the differences between a map and a vector.
 
+`map` is an associative container whereas `vector` is a sequence container
 
 ## Exercise 11.2
 >Give an example of when each of list, vector, deque, map, and set might be most useful.
 
-## Exercise 11.3
+- list : anytime when a doubly-linked list is required.
+- vector : anytime when a dynamic array is required.
+- deque : [An answer from Stack Overflow](http://stackoverflow.com/questions/3880254/why-do-we-need-deque-data-structures-in-the-real-world).
+
+1. A nice application of the deque is storing a web browser's history. Recently visited URLs are added to the front of the deque, and the URL at the back of the deque is removed after some specified number of insertions at the front.
+2. Another common application of the deque is storing a software application's list of undo operations.
+3. One example where a deque can be used is the A-Steal job scheduling algorithm.[5] This algorithm implements task scheduling for several processors. A separate deque with threads to be executed is maintained for each processor. To execute the next thread, the processor gets the first element from the deque (using the "remove first element" deque operation). If the current thread forks, it is put back to the front of the deque ("insert element at front") and a new thread is executed. When one of the processors finishes execution of its own threads (i.e. its deque is empty), it can "steal" a thread from another processor: it gets the last element from the deque of another processor ("remove last element") and executes it. - Courtesy Wikipedia
+- map : dictionary.
+- set : when to keep elements sorted and unique.
+
+## [Exercise 11.3](ex11_03_04.cc)
 >Write your own version of the word-counting program.
 
-## Exercise 11.4
+## [Exercise 11.4](ex11_03_04.cc)
 >Extend your program to ignore case and punctuation. For
 example, “example.” “example,” and “Example” should all increment the same
 counter.
