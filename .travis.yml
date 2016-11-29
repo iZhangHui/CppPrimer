@@ -1,0 +1,34 @@
+# Ubuntu 14.04 Trusty support
+#sudo: required
+#dist: trusty
+
+language: cpp
+
+# matrix setup based on http://genbattle.bitbucket.org/blog/2016/01/17/c++-travis-ci/
+matrix:
+  include:
+    - compiler: gcc
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-5
+      env: COMPILER=g++-5
+    - compiler: clang
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+            - llvm-toolchain-precise-3.8
+          packages:
+            - clang-3.8
+      env: COMPILER=clang++-3.8
+
+before_install:
+  - sudo apt-get update -qq
+
+install:
+
+script:
+  - make CC=$COMPILER all
