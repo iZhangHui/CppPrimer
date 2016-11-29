@@ -1,7 +1,7 @@
 ## C++ Primer - 5th Edition
 ![](https://cloud.githubusercontent.com/assets/6889915/19618212/3a4d1396-9876-11e6-85fc-22e78e101a51.jpg)
 
-![Language](https://img.shields.io/badge/language-C%2B%2B11-orange.svg)
+[![Build Status](https://travis-ci.org/iZhangHui/CppPrimer.svg?branch=master)](https://travis-ci.org/iZhangHui/CppPrimer)![Language](https://img.shields.io/badge/language-C%2B%2B11-orange.svg)
 =========================
 
 ## Compilers recommended
