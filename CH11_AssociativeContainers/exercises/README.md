@@ -29,17 +29,58 @@ counter.
 ## Exercise 11.5
 >Explain the difference between a map and a set. When might you use one or the other?
 
+[A nice answer on Stack Overflow](http://stackoverflow.com/questions/16286714/advantages-of-stdset-vs-vectors-or-maps)
+
+Both std::set and std::map are associative containers. The difference is that std::sets contain only the key, while in std::map there is an associated value. Choosing one over the other depends mainly on what the task at hand is. If you want to build a dictionary of all the words that appear in a text, you could use a `std::set<std::string>`, but if you also want to count how many times each word appeared (i.e. associate a value to the key) then you would need an `std::map<std::string,int>`. If you don't need to associate that count, it does not make sense to have the int that is unnecessary.
+
 ## Exercise 11.6
 >Explain the difference between a set and a list. When might you use one or the other?
 
-## Exercise 11.7
+[list vs set](http://stackoverflow.com/questions/2302681/c-stl-list-vs-set)
+**List**
+
+1.Searching (linear time).
+2.Inserting, deleting, moving (takes constant time).
+3.Elements may be ordered.
+4.Elements may be sorted.
+5.Elements may be duplicate.
+
+**Set**
+
+1.Searching (logarithmic in size).
+2.Insert and delete (logarithimic in general).
+3.Elements are un-ordered.
+4.Elements are always sorted from lower to higher.
+5.Elements are unique.
+
+## [Exercise 11.7](ex11_07.cc)
 >Define a map for which the key is the family’s last name and
 the value is a vector of the children’s names. Write code to add new
 families and to add new children to an existing family.
 
-## Exercise 11.8
+## [Exercise 11.8](ex11_08.cc)
 >Write a program that stores the excluded words in a vector
 instead of in a set. What are the advantages to using a set?
+
+[vector vs set](http://stackoverflow.com/questions/8686725/what-is-the-difference-between-stdset-and-stdvector)
+1.No matter what elements you add or remove (unless you add
+a duplicate, which is not allowed in a set), it will always
+be ordered.
+
+2.A vector has exactly and only the ordering you explicitly
+give it. Items in a vector are where you put them. If you put
+them in out of order, then they're out of order; you now need
+to sort the container to put them back in order.
+
+3.However, if you are constantly inserting and removing items
+from the container, vector will run into many issues.
+
+4.The time it takes to insert an item into a vector is proportional
+to the number of items already in the vector. The time it takes
+to insert an item into a set is proportional to the log of the
+number of items. If the number of items is large, that's a huge
+difference. Log(100, 000) is 17; that's a major speed improvement.
+The same goes for removal.
 
 ## Exercise 11.9
 >Define a map that associates words with a list of line numbers on which the word might occur.
