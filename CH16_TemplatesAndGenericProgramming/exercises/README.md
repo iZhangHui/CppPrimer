@@ -2,34 +2,35 @@
 
 ## Exercise 16.1:
 >Define instantiation.
+
 When the compiler instantiates a template, it creates a new “instance”
 of the template using the actual template argument(s) in place of the
 corresponding template parameter(s).
 
-## Exercise 16.2
+## [Exercise 16.2](ex16_02_03.cc)
 >Write and test your own versions of the compare functions.
 
-## Exercise 16.3
+## [Exercise 16.3](ex16_02_03.cc)
 >Call your compare function on two Sales_data objects to see how your
 compiler handles errors during instantiation.
 
-## Exercise 16.4
+## [Exercise 16.4](ex16_04.cc)
 >Write a template that acts like the library find algorithm.
 The function will need two template type parameters, one to represent the
 function’s iterator parameters and the other for the type of the value. Use
 your function to find a given value in a vector<int> and in a
 list<string.
 
-## Exercise 16.5
+## [Exercise 16.5](ex16_05.cc)
 >Write a template version of the print function from § 6.2.4
 (p. 217) that takes a reference to an array and can handle arrays of any size
 and any element type.
 
-## Exercise 16.6
+## [Exercise 16.6](ex16_06.cc)
 >How do you think the library begin and end functions that
 take an array argument work? Define your own versions of these functions.
 
-## Exercise 16.7
+## [Exercise 16.7](ex16_07.cc)
 >Write a constexpr template that returns the size of a given
 array.
 
@@ -37,6 +38,9 @@ array.
 >In the “Key Concept” box on page 108, we noted that as a
 matter of habit C++ programmers prefer using != to using <. Explain the
 rationale for this habit.
+
+The reason is that more class defines "!=" rather than "<". Doing so can
+reduce the number of requirement of the class used with a template class.
 
 ## Exercise 16.9
 >What is a function template? What is a class template?
