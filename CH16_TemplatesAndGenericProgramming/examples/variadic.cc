@@ -2,34 +2,36 @@
  * This file contains code from "C++ Primer, Fifth Edition", by Stanley B.
  * Lippman, Josee Lajoie, and Barbara E. Moo, and is covered under the
  * copyright and warranty notices given in that book:
- * 
+ *
  * "Copyright (c) 2013 by Objectwrite, Inc., Josee Lajoie, and Barbara E. Moo."
- * 
- * 
+ *
+ *
  * "The authors and publisher have taken care in the preparation of this book,
  * but make no expressed or implied warranty of any kind and assume no
  * responsibility for errors or omissions. No liability is assumed for
  * incidental or consequential damages in connection with or arising out of the
  * use of the information or programs contained herein."
- * 
+ *
  * Permission is granted for this code to be used for educational purposes in
  * association with the book, given proper citation if and when posted or
  * reproduced.Any commercial use of this code requires the explicit written
  * permission of the publisher, Addison-Wesley Professional, a division of
  * Pearson Education, Inc. Send your request for permission, stating clearly
  * what code you would like to use, and in what specific way, to the following
- * address: 
- * 
+ * address:
+ *
  * 	Pearson Education, Inc.
  * 	Rights and Permissions Department
  * 	One Lake Street
  * 	Upper Saddle River, NJ  07458
  * 	Fax: (201) 236-3290
-*/ 
+*/
 
 #include <iostream>
 using std::cerr;
-using std::ostream; using std::cout; using std::endl;
+using std::ostream;
+using std::cout;
+using std::endl;
 
 #include <string>
 using std::string;
@@ -45,25 +47,24 @@ using std::size_t;
 
 // function to end the recursion and print the last element
 template<typename T>
-ostream &print(ostream &os, const T &t)
+ostream& print(ostream& os, const T& t)
 {
     return os << t; // no separator after the last element in the pack
 }
 
-template <typename T, typename... Args>                 
-ostream &
-print(ostream &os, const T &t, const Args&... rest)//expand Args
+template <typename T, typename... Args>
+ostream& print(ostream &os, const T& t, const Args&... rest)//expand Args
 {
     os << t << ", ";
     return print(os, rest...);                     //expand rest
 }
 
 // call debug_rep on each argument in the call to print
-template <typename... Args> 
-ostream &errorMsg(ostream &os, const Args&... rest)
+template <typename... Args>
+ostream& errorMsg(ostream& os, const Args&... rest)
 {
 	// print(os, debug_rep(a1), debug_rep(a2), ..., debug_rep(an)
-	return print(os, debug_rep(rest)...); 
+	return print(os, debug_rep(rest)...);
 }
 
 
@@ -88,11 +89,11 @@ int main()
 	errorMsg(cerr, fcnName, code.num(), otherData, "other", item);
 	cerr << endl;
 
-	print(cerr, debug_rep(fcnName), debug_rep(code.num()), 
-	            debug_rep(otherData), debug_rep("otherData"), 
+	print(cerr, debug_rep(fcnName), debug_rep(code.num()),
+	            debug_rep(otherData), debug_rep("otherData"),
 	            debug_rep(item));
 	cerr << endl;
-	
+
 	return 0;
 }
 

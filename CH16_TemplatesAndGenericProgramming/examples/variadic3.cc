@@ -50,7 +50,6 @@ ostream& print(ostream& os, const T& t)
 }
 
 // this version of print will be called for all but the last element in the pack
-
 template <typename T, typename... Args>
 ostream& print(ostream& os, const T& t, const Args&... rest)
 {
