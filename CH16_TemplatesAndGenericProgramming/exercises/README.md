@@ -105,7 +105,13 @@ named Vec.
 that is declared as a typename and one that is declared as a class? When
 must typename be used?
 
-## Exercise 16.18
+There is no difference. typename and class are interchangeable in the
+declaration of a type template parameter.
+If we want to use a type member of a template type parameter,
+we must explicitly tell the compiler that the name is a type.
+We do so by using the keyword typename.
+
+## [Exercise 16.18](ex16_18.cc)
 >Explain each of the following function template declarations
 and identify whether any are illegal. Correct each error that you find.
 ```cpp
