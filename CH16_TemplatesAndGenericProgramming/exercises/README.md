@@ -123,19 +123,19 @@ and identify whether any are illegal. Correct each error that you find.
 template <typename Ctype> Ctype f5(Ctype a);
 ```
 
-## Exercise 16.19
+## [Exercise 16.19](ex16_19_20.cc)
 >Write a function that takes a reference to a container and
 prints the elements in that container. Use the container’s size_type and
 size members to control the loop that prints the elements.
 
-## Exercise 16.20
+## [Exercise 16.20](ex16_19_20.cc)
 >Rewrite the function from the previous exercise to use
 iterators returned from begin and end to control the loop.
 
-## Exercise 16.21
+## [Exercise 16.21](DebugDelete.h)
 >Write your own version of DebugDelete.
 
-## Exercise 16.22
+## [Exercise 16.22](TextQuery.cc)
 >Revise your TextQuery programs from § 12.3 (p. 484) so
 that the shared_ptr members use a DebugDelete as their deleter (§
 12.1.4, p. 468).
@@ -145,7 +145,7 @@ that the shared_ptr members use a DebugDelete as their deleter (§
 main query program. If your expectations and what happens differ, be sure
 you understand why.
 
-## Exercise 16.24
+## [Exercise 16.24](ex16_24.h)
 >Add a constructor that takes two iterators to your Blob
 template.
 
