@@ -207,19 +207,19 @@ int main() {
 }
 ```
 
-## Exercise 16.28
+## [Exercise 16.28](shared_ptr.h)
 >Write your own versions of shared_ptr and unique_ptr.
 
-## Exercise 16.29
+## [Exercise 16.29](Blob.h)
 >Revise your Blob class to use your version of shared_ptr rather than the library version.
 
-## Exercise 16.30
+## [Exercise 16.30](ex16_30_31.cc)
 >Rerun some of your programs to verify your shared_ptr
 and revised Blob classes. (Note: Implementing the weak_ptr type is
 beyond the scope of this Primer, so you will not be able to use the BlobPtr
 class with your revised Blob.)
 
-## Exercise 16.31
+## [Exercise 16.31](ex16_30_31.cc)
 >Explain how the compiler might inline the call to the deleter
 if we used DebugDelete with unique_ptr.
 
