@@ -3,7 +3,7 @@
 #include <functional>
 #include "DebugDelete.h"
 
-namespace cpp_primer {
+namespace cplusplus_primer {
 // forward declarations needed for friendship
 template<typename T>
 class shared_ptr;
@@ -60,7 +60,7 @@ public:
 	bool unique() const noexcept { return *refCount == 1;}
 
 	// swap
-	void swap(shared_ptr& rhs) { cpp_primer::swap(*this, rhs); }
+	void swap(shared_ptr& rhs) { cplusplus_primer::swap(*this, rhs); }
 
 	// if unique user, free the object pointed to
 	void reset() noexcept { decrement_n_destroy(); }
@@ -147,7 +147,7 @@ inline shared_ptr<T>& shared_ptr<T>::operator=(shared_ptr&& rhs) noexcept
 	decrement_n_destroy();
 
 	// swap two sides
-	cpp_primer::swap(*this, rhs);
+	cplusplus_primer::swap(*this, rhs);
 
 	// std::cout << "shared_ptr::move=\n";
 	return *this;
@@ -175,4 +175,4 @@ inline void shared_ptr<T>::decrement_n_destroy()
 	}
 }
 
-} // namespace cpp_primer
+} // namespace cplusplus_primer

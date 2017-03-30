@@ -56,7 +56,7 @@ public:
 	// BlobPtr<T> end() { return BlobPtr<T>(*this, data->size()); }
 
 private:
-	cpp_primer::shared_ptr<std::vector<T>> data;
+	cplusplus_primer::shared_ptr<std::vector<T>> data;
 	// throw msg if data[i] isn't valid
 	void check(size_type i, const std::string& msg) const;
 };

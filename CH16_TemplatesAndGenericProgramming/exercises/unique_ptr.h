@@ -2,7 +2,7 @@
 
 #include <DebugDelete.h>
 
-namespace cpp_primer {
+namespace cplusplus_primer {
 //! forward declarations for friendship
 template<typename T, typename D>
 class unique_ptr;
@@ -43,7 +43,7 @@ public:
 	T* get() const noexcept { return ptr; }
 
 	// swap member using swap friend
-	void swap(unique_ptr<T, D>& rhs) { cpp_primer::swap(*this, rhs); }
+	void swap(unique_ptr<T, D>& rhs) { cplusplus_primer::swap(*this, rhs); }
 
 	// free and make it point to nullptr or to p's pointee.
 	void reset() noexcept { deleter(ptr); ptr = nullptr; }
@@ -75,7 +75,7 @@ inline unique_ptr<T,D>& unique_ptr<T,D>::operator=(unique_ptr&& rhs) noexcept
 	if (this->ptr != rhs.ptr) {
 		deleter(ptr);
 		ptr = nullptr;
-		cpp_primer::swap(*this, rhs);
+		cplusplus_primer::swap(*this, rhs);
 	}
 	return *this;
 }
@@ -101,5 +101,5 @@ inline T* unique_ptr<T, D>::release()
 	return ret;
 }
 
-} // namespace cpp_primer
+} // namespace cplusplus_primer
 
