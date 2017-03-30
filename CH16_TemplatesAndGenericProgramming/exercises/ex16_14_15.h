@@ -13,7 +13,7 @@ template<unsigned H, unsigned W>
 class Screen {
 	friend std::ostream& operator<<(std::ostream& os, const Screen<H, W>& s)
 	{
-		for (auto h = 0; h < s.height; ++h)
+		for (unsigned h = 0; h < s.height; ++h)
 			os << s.contents.substr(0, W) << std::endl;
 		return os;
 	}
