@@ -340,7 +340,7 @@ space and returns a proper type of shared_ptr pointing to it.
 pass two string literals to the original version of compare from § 16.1.1 (p.
 652).
 
-## Exercise 16.40
+## [Exercise 16.40](ex16_40.cc)
 >Is the following function legal? If not, why not? If it is
 legal, what, if any, are the restrictions on the argument type(s) that can be
 passed, and what is the return type?
@@ -353,7 +353,11 @@ auto fcn3(It beg, It end) -> decltype(*beg + 0)
 }
 ```
 
-## Exercise 16.41
+legal. Only type that support this + 0 operation can be passed.
+the return type depends on the what type the operator + returns.
+
+
+## [Exercise 16.41](ex16_41.cc)
 >Write a version of sum with a return type that is
 guaranteed to be large enough to hold the result of the addition.
 
