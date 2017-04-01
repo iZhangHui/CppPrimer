@@ -455,8 +455,7 @@ template< class U, class... Args >
 void construct( U* p, Args&&... args );
 ```
 
-
-## Exercise 16.47
+## [Exercise 16.47](ex16_47.cc)
 >Write your own version of the flip function and test it by
 calling functions that have lvalue and rvalue reference parameters.
 
