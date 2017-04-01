@@ -459,7 +459,7 @@ void construct( U* p, Args&&... args );
 >Write your own version of the flip function and test it by
 calling functions that have lvalue and rvalue reference parameters.
 
-## Exercise 16.48
+## [Exercise 16.48](ex16_48.c)
 >Write your own versions of the debug_rep functions.
 
 ## Exercise 16.49
@@ -475,7 +475,15 @@ g(42); g(p); g(ci); g(p2);
 f(42); f(p); f(ci); f(p2);
 ```
 
-## Exercise 16.50
+g(42);   g(p);  // g(T) g(T*)
+
+g(ci);   g(p2); // g(T) g(T*)
+
+f(42);   f(p);  // f(T) f(T)
+
+f(ci);   f(p2); // f(T) f(T*)
+
+## [Exercise 16.50](../examples/special.cc)
 >Define the functions from the previous exercise so that they
 print an identifying message. Run the code from that exercise. If the calls
 behave differently from what you expected, make sure you understand why.
