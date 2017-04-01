@@ -43,8 +43,17 @@ using std::string;
 
 // auto as function return type indicates we're using a trailing return type
 // function that returns a reference to an element in the range
+// template <typename It>
+// auto reffcn(It beg, It end) -> decltype(*beg)
+// {
+// 	// process the range
+// 	return *beg;  // return a copy of an element from the range
+// }
+
+
+// C++14
 template <typename It>
-auto reffcn(It beg, It end) -> decltype(*beg)
+auto& reffcn(It beg, It end)
 {
 	// process the range
 	return *beg;  // return a copy of an element from the range
@@ -52,8 +61,16 @@ auto reffcn(It beg, It end) -> decltype(*beg)
 
 // function that returns an element in the range by value
 // must use typename to use a type member of a template parameter
+// template <typename It>
+// auto valfcn(It beg, It end) -> typename remove_reference<decltype(*beg)>::type
+// {
+// 	// process the range
+// 	return *beg;  // return a copy of an element from the range
+// }
+
+// c++14
 template <typename It>
-auto valfcn(It beg, It end) -> typename remove_reference<decltype(*beg)>::type
+auto valfcn(It beg, It end)
 {
 	// process the range
 	return *beg;  // return a copy of an element from the range
@@ -73,6 +90,7 @@ int main()
 	cout << endl;
 
 	auto& ref = reffcn(vi.begin(), vi.end());  // ref is int&
+	// auto ref = reffcn(vi.begin(), vi.end());
 	ref = 5; // changes the value of *beg to which ref refers
 	for (auto i : vi)
 		cout << i << " ";
