@@ -447,6 +447,15 @@ for (size_t i = 0; i != size(); ++i)
 	alloc.construct(dest++, std::move(*elem++));
 ```
 
+In each iteration, the dereference operator * returns a lvalue which is changed to rvalue by
+std::move , becasue the member function construct takes rvalue reference rather than lvalue
+reference.
+```
+template< class U, class... Args >
+void construct( U* p, Args&&... args );
+```
+
+
 ## Exercise 16.47
 >Write your own version of the flip function and test it by
 calling functions that have lvalue and rvalue reference parameters.
