@@ -73,17 +73,22 @@ int main()
 
 	f(&i); // calls f(T), which is an exact match,
 	       // f(const T*) requires a conversion
+	cout << "=====================" << endl;
 
 	g(i);  // calls g(T), g(T*) isn't viable
 	g(&i); // calls g(T*), both templates are viable,
 	       // but g(T*) is more specialized
 
+	cout << "=====================" << endl;
+
 	int* p = &i;
-	const int ci = 0, *p2 = &ci;
-	g(42);   g(p);
-	g(ci);   g(p2);
-	f(42);   f(p);
-	f(ci);   f(p2);
+	const int ci = 0;
+	const int* p2 = &ci;
+	g(42);   g(p);  // g(T) g(T*)
+	g(ci);   g(p2); // g(T) g(T*)
+	cout << "=====================" << endl;
+	f(42);   f(p);  // f(T) f(T)
+	f(ci);   f(p2); // f(T) f(T*)
 
 	return 0;
 }
