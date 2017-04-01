@@ -372,14 +372,45 @@ int i = 0; const int ci = i;
 (c) g(i * ci);
 ```
 
+(a) g(i);
+
+since i is lvalue, T is deduced as int&, val is int& && collapsing to int&
+
+(b) g(ci);
+
+since ci is lvaue, T is deduced as const int&, val is const int& && collapsing to const int&
+
+(c) g(i * ci);
+
+since i * ci is rvalue, T is deduced as int, val is int&& && colapsing to int&&
+
+
 ## Exercise 16.43
 >Using the function defined in the previous exercise, what
 would the template parameter of g be if we called g(i = ci)?
+
+(i = ci) returns lvalue refering to the object i.
+Hence T is deduced as int& val is int& && .
+any change on val changes the object i.
+
 
 ## Exercise 16.44
 >Using the same three calls as in the first exercise,
 determine the types for T if g’s function parameter is declared as T (not
 T&&). What if g’s function parameter is const T&?
+
+if g’s function parameter is declared as T (not T&&).
+                                         ^
+- g(i);       --  T is deduced as int
+- g(ci);      --  T is deduced as int, const is ignored.
+- g(i * ci);  --  T is deduced as int, (i * ci) returns rvalue which is copied to T
+
+What if g’s function parameter is const T&?
+                                    ^^^^^^^^
+- g(i)        --  T is deduced as int  , val : const int&
+- g(ci)       --  T is deduced as int  , val : const int&
+- g(i * ci)   --  T is deduced as int  , val : const int&(see example on page 687)
+
 
 ## Exercise 16.45
 >Given the following template, explain what happens if we
@@ -388,6 +419,25 @@ int?
 ```cpp
 template <typename T> void g(T&& val) { vector<T> v; }
 ```
+
+When we pass an lvalue (e.g., i) to a function parameter that is an rvalue reference to a
+template type parameter (e.g, T&&), the compiler deduces the template type parameter as the
+argument’s lvalue reference type. So, when we call f3(i), the compiler deduces the type of
+T as int&, not int.        --  P.688
+
+In this case, when calling on a literal value, say 42. int&& && will collapse to int&&. At last
+T is deduced as int. Hence std::vector<T> is instantiated as std::vector<int> which is legal.
+
+When calling on a variable int. T will be deduced as int&. int & && will collapse to int&.
+std::vector<int&> is illegal. The reason why int& can't be element of a vector can be found at:
+
+http://stackoverflow.com/questions/922360/why-cant-i-make-a-vector-of-references
+
+The component type of containers like vectors must be Assignable.
+References are not assignable (you can only initialize them once
+when they are declared, and you cannot make them reference something else later).
+Other non-assignable types are also not allowed as components of containers,
+e.g. vector<const int> is not allowed.
 
 ## Exercise 16.46
 >Explain this loop from StrVec::reallocate in § 13.5 (p.
