@@ -488,11 +488,11 @@ f(ci);   f(p2); // f(T) f(T*)
 print an identifying message. Run the code from that exercise. If the calls
 behave differently from what you expected, make sure you understand why.
 
-## Exercise 16.51
+## [Exercise 16.51](ex16_51_52.cc)
 >Determine what sizeof...(Args) and
 sizeof...(rest) return for each call to foo in this section.
 
-## Exercise 16.52
+## [Exercise 16.52](ex16_51_52.cc)
 >Write a program to check your answer to the previous
 question.
 
