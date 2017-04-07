@@ -516,13 +516,17 @@ variadic version.
 
 error: no matching function for call to ‘print(std::ostream&)’
 
-## Exercise 16.56
+## [Exercise 16.56](ex16_56.cc)
 >Write and test a variadic version of errorMsg.
 
 ## Exercise 16.57
 >Compare your variadic version of errorMsg to the
 error_msg function in § 6.2.6 (p. 220). What are the advantages and
 disadvantages of each approach?
+
+The error_msg takes initializer_list as the argument. So only the elements
+stored in it must be the same or at least convertible. In contrast, the variadic
+version provides better flexibility.
 
 ## Exercise 16.58
 >Write the emplace_back function for your StrVec class

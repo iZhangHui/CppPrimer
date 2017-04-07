@@ -7,7 +7,7 @@ OBJECTS = ex16_02_03.exe ex16_04.exe ex16_05.exe \
           ex16_30_31.exe ex16_34.exe ex16_37.exe \
           ex16_39.exe ex16_40.exe ex16_41.exe ex16_45.exe \
           ex16_47.exe ex16_48.exe ex16_51_52.exe \
-          ex16_53.exe
+          ex16_53.exe ex16_56.exe
 
 
 
@@ -15,4 +15,8 @@ include ../../GNU_makefile_template
 
 ex16_22_main.exe: ex16_22_main.o TextQuery.o
 	$(CC) $(CCFLAGS) $(LOCFLAGS) ex16_22_main.o TextQuery.o -o ex16_22_main.exe
+
+ex16_56.exe: ex16_56.o Sales_data.o
+	$(CC) $(CCFLAGS) $(LOCFLAGS) ex16_56.o Sales_data.o -o ex16_56.exe
+
 
