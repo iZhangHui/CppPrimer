@@ -496,7 +496,7 @@ sizeof...(rest) return for each call to foo in this section.
 >Write a program to check your answer to the previous
 question.
 
-## Exercise 16.53
+## [Exercise 16.53](ex16_53.cc)
 >Write your own version of the print functions and test
 them by printing one, two, and five arguments, each of which should have
 different types.
@@ -505,10 +505,16 @@ different types.
 >What happens if we call print on a type that doesn’t have
 an << operator?
 
+Can't pass compile.
+error: cannot bind ‘std::ostream {aka std::basic_ostream<char>}’ lvalue to ‘std::basic_ostream<char>&&’
+return os << t;
+
 ## Exercise 16.55
 >Explain how the variadic version of print would execute if
 we declared the nonvariadic version of print after the definition of the
 variadic version.
+
+error: no matching function for call to ‘print(std::ostream&)’
 
 ## Exercise 16.56
 >Write and test a variadic version of errorMsg.
