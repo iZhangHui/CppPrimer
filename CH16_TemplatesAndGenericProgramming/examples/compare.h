@@ -37,17 +37,25 @@
 template <typename T>
 int compare(const T& v1, const T& v2)
 {
-    if (v1 < v2) return -1;
-    if (v2 < v1) return 1;
-    return 0;
+	if (v1 < v2) return -1;
+	if (v2 < v1) return 1;
+	return 0;
 }
 
+// int compare(T const& v1, T const& v2)
+// {
+//     if (v1 < v2) return -1;
+//     if (v2 < v1) return 1;
+//     return 0;
+// }
+
 // special version of compare to handle C-style character strings
+// T == > const char*
 template <>
-inline int compare(const char* const &v1, const char* const &v2)
+inline int compare(const char* const& v1, const char* const& v2)
 {
 	std::cout << "special version of compare called." << std::endl;
-    return std::strcmp(v1, v2);
+	return std::strcmp(v1, v2);
 }
 
 #endif
