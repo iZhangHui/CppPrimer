@@ -1,16 +1,12 @@
 #include <string>
-using std::string;
-
 #include <iostream>
-using std::cin;
-using std::cout;
-using std::endl;
-using std::istream;
+#include "Vec.h"
 
-#include "ex16_16.h"
+using namespace std;
 
 void print(const Vec<string>& svec)
 {
+	// c++11 Vec iterator
 	for (auto it : svec)
 		cout << it << " " ;
 	cout <<endl;

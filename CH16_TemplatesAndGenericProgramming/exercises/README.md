@@ -96,7 +96,7 @@ template. Which, if any, friends are necessary in class Screen to make the
 input and output operators work? Explain why each friend declaration, if any,
 was needed.
 
-## [Exercise 16.16](ex16_16.h)
+## [Exercise 16.16](Vec.h)
 >Rewrite the StrVec class (§ 13.5, p. 526) as a template
 named Vec.
 
@@ -528,17 +528,23 @@ The error_msg takes initializer_list as the argument. So only the elements
 stored in it must be the same or at least convertible. In contrast, the variadic
 version provides better flexibility.
 
-## Exercise 16.58
+## [Exercise 16.58](Vec.h)
 >Write the emplace_back function for your StrVec class
 and for the Vec class that you wrote for the exercises in § 16.1.2 (p. 668).
 
 ## Exercise 16.59
 >Assuming s is a string, explain svec.emplace_back(s).
 
-## Exercise 16.60
+The argument to emplace_back is rvalue, which is passed to **construct** as
+std::forward<string>(s). The result type from forward<string> is string&, so
+**construct** will be called with rvalue reference. The **construct** function
+will, in turn, forward this argument to the **string** copy constructor to build
+this element.
+
+## [Exercise 16.60](make_shared.cc)
 >Explain how make_shared (§ 12.1.1, p. 451) works.
 
-## Exercise 16.61
+## [Exercise 16.61](make_shared.cc)
 >Define your own version of make_shared.
 
 ## Exercise 16.62

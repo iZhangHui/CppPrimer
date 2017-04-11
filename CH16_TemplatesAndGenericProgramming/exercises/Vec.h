@@ -35,8 +35,8 @@ public:
 	const T& operator[](size_t n) const { return elements[n]; }
 
 	// iterator interface
-	T *begin() const { return elements; }
-	T *end() const { return first_free; }
+	T* begin() const { return elements; }
+	T* end() const { return first_free; }
 private:
 	static std::allocator<T> alloc; // allocates the elements
 	// used by functions that add elements to the Vec
@@ -70,7 +70,7 @@ inline std::pair<T*, T*> Vec<T>::alloc_n_copy(const T* b, const T* e)
 }
 
 template <typename T>
-inline Vec<T>::Vec(Vec &&s) noexcept :
+inline Vec<T>::Vec(Vec&& s) noexcept:
 	// take over resources from s
 	elements(s.elements), first_free(s.first_free), cap(s.cap)
 {
@@ -131,7 +131,7 @@ inline Vec<T>& Vec<T>::operator=(Vec&& rhs) noexcept
 }
 
 template <typename T>
-inline Vec<T> &Vec<T>::operator=(const Vec& rhs)
+inline Vec<T>& Vec<T>::operator=(const Vec& rhs)
 {
 	// call copy to allocate exactly as many elements as in rhs
 	auto data = alloc_n_copy(rhs.begin(), rhs.end());
